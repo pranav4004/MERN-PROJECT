@@ -20,6 +20,8 @@ const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
   email: yup.string().email("invalid email").required("required"),
+  education: yup.string().required("required"),
+  college:yup.string().required("required"),
   password: yup.string().required("required"),
   location: yup.string().required("required"),
   occupation: yup.string().required("required"),
@@ -36,9 +38,12 @@ const initialValuesRegister = {
   lastName: "",
   email: "",
   password: "",
+  education:"",
+  college:"",
   location: "",
   occupation: "",
   picture: "",
+  language:"",
 };
 
 const initialValuesLogin = {
@@ -173,6 +178,26 @@ const Form = () => {
                   helperText={touched.occupation && errors.occupation}
                   sx={{ gridColumn: "span 4" }}
                 />
+                  <TextField
+              label="education"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.educaion}
+              name="education"
+              error={Boolean(touched.education) && Boolean(errors.education)}
+              helperText={touched.education && errors.education}
+              sx={{ gridColumn: "span 4" }}
+            /> 
+             <TextField
+              label="college"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.educaion}
+              name="college"
+              error={Boolean(touched.college) && Boolean(errors.college)}
+              helperText={touched.college && errors.college}
+              sx={{ gridColumn: "span 4" }}
+            /> 
                 <Box
                   gridColumn="span 4"
                   border={`1px solid ${palette.neutral.medium}`}

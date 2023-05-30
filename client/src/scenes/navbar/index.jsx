@@ -74,6 +74,13 @@ const Navbar = () => {
       </FlexBetween>
 
       {/* DESKTOP NAV */}
+      {/* Resume Button */}
+      <IconButton onClick={() => navigate("/resume")}>
+            <Typography variant="h6" color="primary">
+              Resume
+            </Typography>
+                        </IconButton>
+        {/* Resume Button */}        
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
           <IconButton onClick={() => dispatch(setMode())}>
